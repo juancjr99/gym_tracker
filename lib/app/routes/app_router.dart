@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:gym_tracker/app/routes/app_routes.dart';
 import 'package:gym_tracker/app/routes/route_params.dart';
+import 'package:gym_tracker/app/view/app_scaffold.dart';
 import 'package:gym_tracker/presentation/pages/exercises/exercises_page.dart';
 import 'package:gym_tracker/presentation/pages/home/home_page.dart';
 import 'package:gym_tracker/presentation/pages/routines/create_routine_page.dart';
@@ -17,6 +18,7 @@ class AppRouter {
 
   /// Clave global para el navegador
   static final _rootNavigatorKey = GlobalKey<NavigatorState>();
+  static final _shellNavigatorKey = GlobalKey<NavigatorState>();
 
   /// Instancia singleton del router
   static final GoRouter router = GoRouter(
@@ -24,19 +26,50 @@ class AppRouter {
     initialLocation: AppRoutes.home,
     debugLogDiagnostics: true,
     routes: [
-      // Ruta principal / Home
-      GoRoute(
-        path: AppRoutes.home,
-        name: 'home',
-        builder: (context, state) => const HomePage(),
+      // Shell route con Bottom Navigation Bar
+      ShellRoute(
+        navigatorKey: _shellNavigatorKey,
+        builder: (context, state, child) => AppScaffold(child: child),
+        routes: [
+          // Home/Workout tab
+          GoRoute(
+            path: AppRoutes.home,
+            name: 'home',
+            pageBuilder: (context, state) => NoTransitionPage(
+              child: const HomePage(),
+            ),
+          ),
+
+          // Routines tab (lista completa)
+          GoRoute(
+            path: AppRoutes.routines,
+            name: 'routines',
+            pageBuilder: (context, state) => NoTransitionPage(
+              child: const RoutinesListPage(),
+            ),
+          ),
+
+          // Statistics tab
+          GoRoute(
+            path: AppRoutes.statistics,
+            name: 'statistics',
+            pageBuilder: (context, state) => NoTransitionPage(
+              child: const StatisticsPage(),
+            ),
+          ),
+
+          // Settings tab
+          GoRoute(
+            path: AppRoutes.settings,
+            name: 'settings',
+            pageBuilder: (context, state) => NoTransitionPage(
+              child: const SettingsPage(),
+            ),
+          ),
+        ],
       ),
 
-      // Rutas de Rutinas
-      GoRoute(
-        path: AppRoutes.routines,
-        name: 'routines',
-        builder: (context, state) => const RoutinesListPage(),
-      ),
+      // Rutas fuera del bottom nav (pantallas completas)
       GoRoute(
         path: AppRoutes.createRoutine,
         name: 'create-routine',
@@ -58,8 +91,6 @@ class AppRouter {
           return RoutineDetailPage(routineId: id);
         },
       ),
-
-      // Rutas de Entrenamientos
       GoRoute(
         path: AppRoutes.startWorkout,
         name: 'start-workout',
@@ -68,26 +99,10 @@ class AppRouter {
           return StartWorkoutPage(routineId: routineId);
         },
       ),
-
-      // Rutas de Ejercicios
       GoRoute(
         path: AppRoutes.exercises,
         name: 'exercises',
         builder: (context, state) => const ExercisesPage(),
-      ),
-
-      // Rutas de Configuración
-      GoRoute(
-        path: AppRoutes.settings,
-        name: 'settings',
-        builder: (context, state) => const SettingsPage(),
-      ),
-
-      // Rutas de Estadísticas
-      GoRoute(
-        path: AppRoutes.statistics,
-        name: 'statistics',
-        builder: (context, state) => const StatisticsPage(),
       ),
     ],
     

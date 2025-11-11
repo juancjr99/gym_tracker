@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:gym_tracker/app/routes/app_routes.dart';
+import 'package:gym_tracker/core/theme/app_colors.dart';
 import 'package:gym_tracker/injection/injection.dart';
 import 'package:gym_tracker/presentation/presentation.dart';
+import 'package:gym_tracker/presentation/widgets/widgets.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 /// Página que muestra la lista de rutinas
 class RoutinesListPage extends StatelessWidget {
@@ -36,15 +39,20 @@ class RoutinesListPage extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Icon(Icons.error_outline, size: 64, color: Colors.red),
+                    Icon(
+                      PhosphorIconsBold.warningCircle,
+                      size: 64,
+                      color: Theme.of(context).colorScheme.error,
+                    ),
                     const SizedBox(height: 16),
                     Text(state.message),
                     const SizedBox(height: 16),
-                    ElevatedButton(
+                    ElevatedButton.icon(
                       onPressed: () {
                         context.read<RoutineBloc>().add(const LoadRoutines());
                       },
-                      child: const Text('Retry'),
+                      icon: const Icon(PhosphorIconsBold.arrowClockwise),
+                      label: const Text('Retry'),
                     ),
                   ],
                 ),
@@ -53,21 +61,28 @@ class RoutinesListPage extends StatelessWidget {
 
             if (state is RoutineEmpty) {
               return Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Icon(Icons.fitness_center, size: 64, color: Colors.grey),
-                    const SizedBox(height: 16),
-                    const Text('No routines yet'),
-                    const SizedBox(height: 8),
-                    const Text('Create your first routine to get started!'),
-                    const SizedBox(height: 24),
-                    ElevatedButton.icon(
-                      onPressed: () => context.push(AppRoutes.createRoutine),
-                      icon: const Icon(Icons.add),
-                      label: const Text('Create Routine'),
-                    ),
-                  ],
+                child: Padding(
+                  padding: const EdgeInsets.all(32),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        PhosphorIconsBold.folderOpen,
+                        size: 64,
+                        color: AppColors.darkOnSurfaceVariant,
+                      ),
+                      const SizedBox(height: 16),
+                      const Text('No routines yet'),
+                      const SizedBox(height: 8),
+                      const Text('Create your first routine to get started!'),
+                      const SizedBox(height: 24),
+                      PowerButton(
+                        onPressed: () => context.push(AppRoutes.createRoutine),
+                        icon: PhosphorIconsBold.plus,
+                        label: 'Create Routine',
+                      ),
+                    ],
+                  ),
                 ),
               );
             }

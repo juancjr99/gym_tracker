@@ -5,3 +5,6 @@ export 'bloc/workout/workout.dart';
 
 /// Exports de todas las páginas
 export 'pages/pages.dart';
+
+/// Exports de widgets reutilizables
+export 'widgets/widgets.dart';
