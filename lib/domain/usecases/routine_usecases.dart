@@ -1,7 +1,9 @@
 import 'package:gym_tracker/domain/entities/entities.dart';
 import 'package:gym_tracker/domain/repositories/repositories.dart';
+import 'package:injectable/injectable.dart';
 
 /// Caso de uso para obtener todas las rutinas activas
+@injectable
 class GetAllRoutines {
   const GetAllRoutines(this._repository);
 
@@ -13,6 +15,7 @@ class GetAllRoutines {
 }
 
 /// Caso de uso para obtener rutinas por tipo
+@injectable
 class GetRoutinesByType {
   const GetRoutinesByType(this._repository);
 
@@ -24,6 +27,7 @@ class GetRoutinesByType {
 }
 
 /// Caso de uso para obtener una rutina por ID
+@injectable
 class GetRoutineById {
   const GetRoutineById(this._repository);
 
@@ -35,6 +39,7 @@ class GetRoutineById {
 }
 
 /// Caso de uso para buscar rutinas por nombre
+@injectable
 class SearchRoutines {
   const SearchRoutines(this._repository);
 
@@ -49,6 +54,7 @@ class SearchRoutines {
 }
 
 /// Caso de uso para crear una nueva rutina
+@injectable
 class CreateRoutine {
   const CreateRoutine(this._repository);
 
@@ -70,6 +76,7 @@ class CreateRoutine {
 }
 
 /// Caso de uso para actualizar una rutina existente
+@injectable
 class UpdateRoutine {
   const UpdateRoutine(this._repository);
 
@@ -87,6 +94,7 @@ class UpdateRoutine {
 }
 
 /// Caso de uso para eliminar una rutina
+@injectable
 class DeleteRoutine {
   const DeleteRoutine(this._repository);
 
@@ -98,6 +106,7 @@ class DeleteRoutine {
 }
 
 /// Caso de uso para duplicar una rutina existente
+@injectable
 class DuplicateRoutine {
   const DuplicateRoutine(this._repository);
 
@@ -114,6 +123,7 @@ class DuplicateRoutine {
 }
 
 /// Caso de uso para obtener rutinas plantilla
+@injectable
 class GetTemplateRoutines {
   const GetTemplateRoutines(this._repository);
 
@@ -125,6 +135,7 @@ class GetTemplateRoutines {
 }
 
 /// Caso de uso para obtener rutinas archivadas
+@injectable
 class GetArchivedRoutines {
   const GetArchivedRoutines(this._repository);
 
@@ -136,6 +147,7 @@ class GetArchivedRoutines {
 }
 
 /// Caso de uso para archivar/desarchivar una rutina
+@injectable
 class ToggleArchiveRoutine {
   const ToggleArchiveRoutine(this._repository);
 
@@ -147,6 +159,7 @@ class ToggleArchiveRoutine {
 }
 
 /// Caso de uso para obtener rutinas por etiquetas
+@injectable
 class GetRoutinesByTags {
   const GetRoutinesByTags(this._repository);
 
@@ -161,6 +174,7 @@ class GetRoutinesByTags {
 }
 
 /// Caso de uso para reordenar ejercicios en una rutina
+@injectable
 class ReorderRoutineExercises {
   const ReorderRoutineExercises(this._repository);
 

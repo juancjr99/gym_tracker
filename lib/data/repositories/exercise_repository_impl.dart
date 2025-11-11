@@ -2,8 +2,10 @@ import 'package:gym_tracker/data/datasources/local/exercise_dao.dart';
 import 'package:gym_tracker/data/models/models.dart';
 import 'package:gym_tracker/domain/entities/entities.dart';
 import 'package:gym_tracker/domain/repositories/repositories.dart';
+import 'package:injectable/injectable.dart';
 
 /// Implementación del repositorio de ejercicios usando Floor/SQLite
+@LazySingleton(as: ExerciseRepository)
 class ExerciseRepositoryImpl implements ExerciseRepository {
   ExerciseRepositoryImpl(this._exerciseDao);
 

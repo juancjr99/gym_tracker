@@ -1,7 +1,9 @@
 import 'package:gym_tracker/domain/entities/entities.dart';
 import 'package:gym_tracker/domain/repositories/repositories.dart';
+import 'package:injectable/injectable.dart';
 
-/// Caso de uso para obtener todos los registros de entrenamiento
+/// Caso de uso para obtener todos los entrenamientos
+@injectable
 class GetAllWorkouts {
   const GetAllWorkouts(this._repository);
 
@@ -13,6 +15,7 @@ class GetAllWorkouts {
 }
 
 /// Caso de uso para obtener entrenamientos por rango de fechas
+@injectable
 class GetWorkoutsByDateRange {
   const GetWorkoutsByDateRange(this._repository);
 
@@ -24,6 +27,7 @@ class GetWorkoutsByDateRange {
 }
 
 /// Caso de uso para obtener un entrenamiento por ID
+@injectable
 class GetWorkoutById {
   const GetWorkoutById(this._repository);
 
@@ -35,6 +39,7 @@ class GetWorkoutById {
 }
 
 /// Caso de uso para obtener entrenamientos de una rutina específica
+@injectable
 class GetWorkoutsByRoutine {
   const GetWorkoutsByRoutine(this._repository);
 
@@ -46,6 +51,7 @@ class GetWorkoutsByRoutine {
 }
 
 /// Caso de uso para obtener el último entrenamiento realizado
+@injectable
 class GetLastWorkout {
   const GetLastWorkout(this._repository);
 
@@ -57,6 +63,7 @@ class GetLastWorkout {
 }
 
 /// Caso de uso para obtener entrenamientos en progreso
+@injectable
 class GetActiveWorkouts {
   const GetActiveWorkouts(this._repository);
 
@@ -68,6 +75,7 @@ class GetActiveWorkouts {
 }
 
 /// Caso de uso para iniciar un nuevo entrenamiento
+@injectable
 class StartWorkout {
   const StartWorkout(this._repository);
 
@@ -88,6 +96,7 @@ class StartWorkout {
 }
 
 /// Caso de uso para completar un entrenamiento
+@injectable
 class CompleteWorkout {
   const CompleteWorkout(this._repository);
 
@@ -110,6 +119,7 @@ class CompleteWorkout {
 }
 
 /// Caso de uso para cancelar un entrenamiento
+@injectable
 class CancelWorkout {
   const CancelWorkout(this._repository);
 
@@ -132,6 +142,7 @@ class CancelWorkout {
 }
 
 /// Caso de uso para actualizar un registro de ejercicio en un entrenamiento
+@injectable
 class UpdateExerciseRecord {
   const UpdateExerciseRecord(this._repository);
 
@@ -146,6 +157,7 @@ class UpdateExerciseRecord {
 }
 
 /// Caso de uso para guardar/actualizar un entrenamiento completo
+@injectable
 class SaveWorkout {
   const SaveWorkout(this._repository);
 
@@ -164,6 +176,7 @@ class SaveWorkout {
 }
 
 /// Caso de uso para eliminar un entrenamiento
+@injectable
 class DeleteWorkout {
   const DeleteWorkout(this._repository);
 
@@ -175,6 +188,7 @@ class DeleteWorkout {
 }
 
 /// Caso de uso para obtener estadísticas de un ejercicio
+@injectable
 class GetExerciseStats {
   const GetExerciseStats(this._repository);
 
@@ -186,6 +200,7 @@ class GetExerciseStats {
 }
 
 /// Caso de uso para obtener el progreso de un ejercicio
+@injectable
 class GetExerciseProgress {
   const GetExerciseProgress(this._repository);
 
@@ -197,6 +212,7 @@ class GetExerciseProgress {
 }
 
 /// Caso de uso para obtener récords personales del usuario
+@injectable
 class GetPersonalRecords {
   const GetPersonalRecords(this._repository);
 

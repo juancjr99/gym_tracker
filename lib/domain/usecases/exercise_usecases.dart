@@ -1,7 +1,10 @@
+import 'package:injectable/injectable.dart';
+
 import '../entities/entities.dart';
 import '../repositories/repositories.dart';
 
 /// Caso de uso para obtener todos los ejercicios
+@injectable
 class GetAllExercises {
   const GetAllExercises(this._repository);
 
@@ -13,6 +16,7 @@ class GetAllExercises {
 }
 
 /// Caso de uso para obtener ejercicios por grupo muscular
+@injectable
 class GetExercisesByMuscleGroup {
   const GetExercisesByMuscleGroup(this._repository);
 
@@ -24,6 +28,7 @@ class GetExercisesByMuscleGroup {
 }
 
 /// Caso de uso para buscar ejercicios
+@injectable
 class SearchExercises {
   const SearchExercises(this._repository);
 
@@ -38,6 +43,7 @@ class SearchExercises {
 }
 
 /// Caso de uso para crear un ejercicio personalizado
+@injectable
 class CreateCustomExercise {
   const CreateCustomExercise(this._repository);
 
@@ -51,6 +57,7 @@ class CreateCustomExercise {
 }
 
 /// Caso de uso para obtener ejercicios favoritos
+@injectable
 class GetFavoriteExercises {
   const GetFavoriteExercises(this._repository);
 
@@ -62,6 +69,7 @@ class GetFavoriteExercises {
 }
 
 /// Caso de uso para alternar favorito de un ejercicio
+@injectable
 class ToggleExerciseFavorite {
   const ToggleExerciseFavorite(this._repository);
 
