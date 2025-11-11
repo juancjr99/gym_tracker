@@ -75,7 +75,7 @@ class AppTheme {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
           side: BorderSide(
-            color: AppColors.darkBorder.withOpacity(0.3),
+            color: AppColors.darkBorder,
             width: 1,
           ),
         ),
@@ -88,7 +88,7 @@ class AppTheme {
           backgroundColor: AppColors.darkAccent,
           foregroundColor: AppColors.darkOnAccent,
           elevation: 2,
-          shadowColor: AppColors.darkAccent.withOpacity(0.3),
+          shadowColor: AppColors.darkAccent,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),
@@ -107,7 +107,7 @@ class AppTheme {
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
           borderSide: BorderSide(
-            color: AppColors.darkBorder.withOpacity(0.3),
+            color: AppColors.darkBorder,
             width: 1,
           ),
         ),
@@ -133,7 +133,7 @@ class AppTheme {
           ),
         ),
         labelStyle: AppTextStyles.bodyMedium(AppColors.darkOnSurfaceVariant),
-        hintStyle: AppTextStyles.bodyMedium(AppColors.darkOnSurfaceVariant.withOpacity(0.5)),
+        hintStyle: AppTextStyles.bodyMedium(AppColors.darkOnSurfaceVariant),
       ),
     );
   }

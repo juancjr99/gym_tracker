@@ -31,7 +31,7 @@ class PowerButton extends StatelessWidget {
         boxShadow: onPressed != null
             ? [
                 BoxShadow(
-                  color: AppColors.darkPrimary.withOpacity(0.15),
+                  color: AppColors.darkPrimary,
                   blurRadius: 6,
                   offset: const Offset(0, 3),
                 ),

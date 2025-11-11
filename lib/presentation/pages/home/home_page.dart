@@ -242,7 +242,7 @@ class _StreakCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: AppColors.darkPrimary.withOpacity(0.15),
+            color: AppColors.darkPrimary,
             blurRadius: 8,
             offset: const Offset(0, 4),
           ),
@@ -267,7 +267,7 @@ class _StreakCard extends StatelessWidget {
               Text(
                 'Keep it up!',
                 style: AppTextStyles.bodySmall(
-                  AppColors.darkOnPrimary.withOpacity(0.8),
+                  AppColors.darkOnPrimary,
                 ),
               ),
             ],
@@ -304,12 +304,12 @@ class _QuickStartCard extends StatelessWidget {
           color: AppColors.darkSurface,
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
-            color: AppColors.darkBorder.withOpacity(0.3),
+            color: AppColors.darkBorder,
             width: 1,
           ),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.1),
+              color: Colors.black,
               blurRadius: 6,
               offset: const Offset(0, 2),
             ),
@@ -323,7 +323,7 @@ class _QuickStartCard extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                    color: AppColors.darkPrimary.withOpacity(0.2),
+                    color: AppColors.darkPrimary,
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Icon(
@@ -371,7 +371,7 @@ class _EmptyQuickStart extends StatelessWidget {
         color: AppColors.darkSurface,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: AppColors.darkBorder.withOpacity(0.3),
+          color: AppColors.darkBorder,
           width: 1,
         ),
       ),
@@ -459,7 +459,7 @@ class _MiniStatCard extends StatelessWidget {
         color: AppColors.darkSurface,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: AppColors.darkBorder.withOpacity(0.3),
+          color: AppColors.darkBorder,
           width: 1,
         ),
       ),
@@ -504,7 +504,7 @@ class _RecentWorkoutTile extends StatelessWidget {
         color: AppColors.darkSurface,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: AppColors.darkBorder.withOpacity(0.3),
+          color: AppColors.darkBorder,
           width: 1,
         ),
       ),
@@ -513,7 +513,7 @@ class _RecentWorkoutTile extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
-              color: AppColors.darkPrimary.withOpacity(0.2),
+              color: AppColors.darkPrimary,
               borderRadius: BorderRadius.circular(8),
             ),
             child: Icon(
