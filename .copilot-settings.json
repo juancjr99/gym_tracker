@@ -1,0 +1,62 @@
+{
+  "prompts": {
+    "flutter_best_practices": "Siempre utilizar StatelessWidget en lugar de StatefulWidget. Implementar BLoC para gestión de estado. Seguir Material Design 3. Usar Clean Architecture con separación clara de capas.",
+    "code_organization": "Organizar código en archivos barrel. Mantener nomenclatura en español para UI y documentación. Usar tipos seguros y null safety.",
+    "ui_guidelines": "Implementar Material Design 3 con esquemas de color consistentes. Manejar responsive design. Evitar overflow con SingleChildScrollView cuando sea necesario.",
+    "very_good_ventures": "Seguir las buenas prácticas de Very Good Ventures: usar análisis estático muy estricto, preferir composición sobre herencia, mantener funciones puras, usar const constructors siempre que sea posible.",
+    "code_optimization": "Optimizar código constantemente: extraer widgets complejos a archivos separados, limitar archivos a máximo 300 líneas, dividir funcionalidad en múltiples archivos pequeños y cohesivos.",
+    "file_structure": "Separar widgets en archivos individuales por responsabilidad. Crear carpetas específicas para widgets (widgets/), utilidades (utils/), constantes (constants/). Seguir estructura de carpetas por features."
+  },
+  "references": {
+    "flutter_docs": "https://docs.flutter.dev/",
+    "material_design": "https://m3.material.io/",
+    "bloc_pattern": "https://bloclibrary.dev/",
+    "clean_architecture": "https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html",
+    "very_good_ventures": "https://verygood.ventures/blog/very-good-flutter-analysis",
+    "dart_style_guide": "https://dart.dev/guides/language/effective-dart/style"
+  },
+  "rules": {
+    "always_use_stateless": true,
+    "prefer_bloc_over_state": true,
+    "use_material_design_3": true,
+    "spanish_ui_text": true,
+    "avoid_stateful_widgets": true,
+    "use_barrel_files": true,
+    "max_file_length": 300,
+    "extract_complex_widgets": true,
+    "separate_widgets_by_responsibility": true,
+    "use_feature_based_folders": true,
+    "prefer_composition_over_inheritance": true,
+    "always_use_const_constructors": true,
+    "extract_reusable_components": true,
+    "optimize_widget_builds": true
+  },
+  "code_style": {
+    "line_length": 80,
+    "prefer_single_quotes": true,
+    "always_declare_return_types": true,
+    "prefer_final_locals": true,
+    "avoid_print": true,
+    "use_trailing_commas": true,
+    "prefer_relative_imports": false,
+    "sort_constructors_first": true,
+    "use_super_parameters": true
+  },
+  "architecture": {
+    "feature_structure": "lib/features/{feature_name}/{data,domain,presentation}",
+    "widget_organization": "lib/presentation/widgets/{feature_name}/",
+    "shared_widgets": "lib/presentation/widgets/shared/",
+    "utils_location": "lib/core/utils/",
+    "constants_location": "lib/core/constants/",
+    "extract_threshold_lines": 50,
+    "max_widget_depth": 5
+  },
+  "optimization": {
+    "prefer_const_widgets": true,
+    "extract_build_methods": true,
+    "avoid_deep_nesting": true,
+    "use_builder_pattern": true,
+    "cache_expensive_operations": true,
+    "minimize_rebuilds": true
+  }
+}
